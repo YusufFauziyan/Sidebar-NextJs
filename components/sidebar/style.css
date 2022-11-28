@@ -1,17 +1,76 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
 
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background-color: #f6f6f9;
+}
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  background: #ededed;
-  font-family: "Euclid Circular A";
+/* humburger menu */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
 
-button {
+/* scroll */
+.scrollService::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+}
+
+.scrollService::-webkit-scrollbar-thumb {
+  background: #f7b731;
+  border-radius: 10px;
+}
+
+.scrollService::-webkit-scrollbar-thumb:hover {
+  background: #c89d2f;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #373737;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #37373780;
+}
+
+#login {
+  background-image: url(../assets/images/bgLogin.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain
+}
+
+.sidebar button {
   background: transparent;
   border: 0;
   padding: 0;
@@ -20,7 +79,7 @@ button {
 }
 
 .sidebar {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 260px;
@@ -34,7 +93,7 @@ button {
   align-items: center;
   height: 72px;
   padding: 0 1.25rem 0 0;
-  border-bottom: 1px solid #e1e1e1;
+  /* border-bottom: 1px solid #e1e1e1; */
 }
 
 .sidebar .sidebar-header button {
@@ -52,11 +111,11 @@ button {
   align-items: center;
   height: 50px;
   width: 100%;
-  font-family: inherit;
+  /* font-family: inherit; */
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
-  padding: 0 25px;
+  padding: 0 12px;
   color: #1a1a1a;
 }
 
@@ -65,8 +124,16 @@ button {
 }
 
 .sidebar button.active {
-  background: #9d5bff;
+  background: rgba(0,0,0, .5);
   color: #f9f9f9;
+  border-radius: .3rem;
+}
+
+.sidebar button.active1 {
+  background: black;
+  color: #f9f9f9;
+  border-radius: .3rem;
+  position: absolute;
 }
 
 .sub-nav button.active::before {
@@ -75,7 +142,7 @@ button {
 
 .sub-nav {
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .sub-nav button {
@@ -90,6 +157,7 @@ button {
   translate: 0 -50%;
   width: 5px;
   height: 5px;
+  border: 1px solid ;
   border-radius: 50%;
   background-color: #1a1a1a;
 }
@@ -98,3 +166,10 @@ button {
   font-size: 22px;
 }
 
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "libraries/nprogress";
